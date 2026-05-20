@@ -5,3 +5,12 @@ target/
 .idea/
 *.iml
 .DS_Store
+
+# Documentos de planejamento interno
+docs/
+
+# PDF do desafio
+*.pdf
+
+# Scripts internos do ambiente de desenvolvimento
+.github/java-upgrade/
