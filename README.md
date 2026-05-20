@@ -47,7 +47,7 @@ A aplicação estará disponível em `http://localhost:8082`.
 
 ## Documentação interativa
 
-- **Swagger UI:** `http://localhost:8082/swagger-ui.html`
+- **Swagger UI:** `http://localhost:8082/swagger-ui/index.html`
 - **H2 Console:** `http://localhost:8082/h2-console`
   - JDBC URL: `jdbc:h2:mem:customerdb`
   - Usuário: `sa` | Senha: *(vazio)*
