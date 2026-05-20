@@ -48,6 +48,7 @@ A aplicação estará disponível em `http://localhost:8082`.
 ## Documentação interativa
 
 - **Swagger UI:** `http://localhost:8082/swagger-ui/index.html`
+  > ⚠️ Usar o caminho `/swagger-ui/index.html` — o atalho `/swagger-ui.html` retorna página em branco com springdoc 2.x.
 - **H2 Console:** `http://localhost:8082/h2-console`
   - JDBC URL: `jdbc:h2:mem:customerdb`
   - Usuário: `sa` | Senha: *(vazio)*
