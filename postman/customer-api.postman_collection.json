@@ -1,0 +1,63 @@
+{
+  "info": {
+    "name": "Customer API — Bolt",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8082" }
+  ],
+  "item": [
+    {
+      "name": "Cadastrar cliente",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/api/customers",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"João Silva\",\n  \"documento\": \"123.456.789-00\",\n  \"endereco\": {\n    \"cep\": \"88010-000\",\n    \"numero\": \"100\",\n    \"complemento\": \"Sala 1\"\n  },\n  \"consumerUnits\": [\n    {\n      \"nome\": \"Minha casa\",\n      \"numeroInstalacao\": \"9001234\",\n      \"endereco\": {\n        \"cep\": \"30130-110\",\n        \"numero\": \"45\"\n      }\n    }\n  ]\n}"
+        }
+      }
+    },
+    {
+      "name": "Atualizar cliente",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/api/customers/1",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"João Silva Atualizado\",\n  \"documento\": \"123.456.789-00\",\n  \"endereco\": {\n    \"cep\": \"88010-000\",\n    \"numero\": \"200\"\n  },\n  \"consumerUnits\": [\n    {\n      \"nome\": \"Meu comércio\",\n      \"numeroInstalacao\": \"9001234\",\n      \"endereco\": {\n        \"cep\": \"30130-110\",\n        \"numero\": \"10\"\n      }\n    }\n  ]\n}"
+        }
+      }
+    },
+    {
+      "name": "Deletar cliente",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/api/customers/1"
+      }
+    },
+    {
+      "name": "Listar todos",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/customers"
+      }
+    },
+    {
+      "name": "Obter por ID",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/customers/1"
+      }
+    },
+    {
+      "name": "Últimos 20",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/customers/recent"
+      }
+    }
+  ]
+}
