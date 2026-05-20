@@ -149,7 +149,7 @@ public class CustomerService {
                     throw new DocumentAlreadyExistsException("Número de instalação já cadastrado: " + req.numeroInstalacao());
                 }
             } else {
-                if (customerRepository.existsByNumeroInstalacaoAndCustomerIdNot(req.numeroInstalacao(), excludeCustomerId)) {
+                if (customerRepository.countByNumeroInstalacaoAndCustomerIdNot(req.numeroInstalacao(), excludeCustomerId) > 0) {
                     throw new DocumentAlreadyExistsException("Número de instalação já cadastrado: " + req.numeroInstalacao());
                 }
             }

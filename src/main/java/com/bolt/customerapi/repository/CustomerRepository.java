@@ -26,11 +26,12 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     /**
      * Verifica se o número de instalação pertence a um cliente diferente do informado.
      * Usado na atualização para permitir manter o mesmo número sem conflito.
+     * Retorna contagem — COUNT(c) > 0 não é JPQL válido no Hibernate 6.
      */
-    @Query("SELECT COUNT(c) > 0 FROM Customer c JOIN c.consumerUnits cu " +
+    @Query("SELECT COUNT(c) FROM Customer c JOIN c.consumerUnits cu " +
            "WHERE cu.numeroInstalacao = :num AND c.id != :customerId")
-    boolean existsByNumeroInstalacaoAndCustomerIdNot(@Param("num") String num,
-                                                     @Param("customerId") Long customerId);
+    long countByNumeroInstalacaoAndCustomerIdNot(@Param("num") String num,
+                                                  @Param("customerId") Long customerId);
 
     /** Retorna todos os clientes ativos (remoção lógica: ativo = true). */
     List<Customer> findByAtivoTrue();
