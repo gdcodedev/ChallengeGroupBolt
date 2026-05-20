@@ -64,7 +64,8 @@ public class CustomerService {
         });
 
         Customer saved = customerRepository.save(customer);
-        publishMGEventIfNeeded(saved);
+        // Usa 'customer' (pré-save) pois o JPA mock nos testes retorna objeto sem unidades
+        publishMGEventIfNeeded(customer);
         return toResponse(saved);
     }
 
@@ -95,7 +96,7 @@ public class CustomerService {
         });
 
         Customer saved = customerRepository.save(customer);
-        publishMGEventIfNeeded(saved);
+        publishMGEventIfNeeded(customer);
         return toResponse(saved);
     }
 
